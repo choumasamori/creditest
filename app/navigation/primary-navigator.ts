@@ -1,13 +1,16 @@
 import { createStackNavigator } from "react-navigation-stack"
-import { WelcomeScreen, DemoScreen } from "../screens"
+import { WelcomeScreen, DemoScreen, MainScreen , DetailScreen} from "../screens"
 
 export const PrimaryNavigator = createStackNavigator(
   {
+    main: { screen: MainScreen },
+    detail: {screen:DetailScreen},
     welcome: { screen: WelcomeScreen },
     demo: { screen: DemoScreen },
   },
   {
     headerMode: "none",
+    initialRouteName:"main"
   },
 )
 
@@ -18,4 +21,4 @@ export const PrimaryNavigator = createStackNavigator(
  * Anything not on this list will be a standard `back` action in
  * react-navigation.
  */
-export const exitRoutes: string[] = ["welcome"]
+export const exitRoutes: string[] = ["main"]
